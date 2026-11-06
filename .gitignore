@@ -1,0 +1,16 @@
+.env
+server-template.tar.gz
+
+# Downloaded GTAC runtime
+server/Server
+server/libmozjs-60.so
+server/server.xml
+server/logs/
+server/backups/
+
+# Official freeroam skeleton is downloaded at install
+server/resources/freeroam/
+
+# Generated client cache
+server/htdocs/*
+!server/htdocs/.gitkeep

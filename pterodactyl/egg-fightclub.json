@@ -1,0 +1,172 @@
+{
+  "_comment": "FIGHT CLUB server egg",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2026-11-06T00:00:00+00:00",
+  "name": "FIGHT CLUB",
+  "author": "ferecece@users.noreply.github.com",
+  "description": "GTA Connected fight server for GTA IV: The Ballad of Gay Tony.",
+  "features": null,
+  "docker_images": {
+    "ghcr.io/ferecece/fightclub:latest": "ghcr.io/ferecece/fightclub:latest"
+  },
+  "file_denylist": [],
+  "startup": "./Server",
+  "config": {
+    "files": "{}",
+    "startup": "{\"done\":\"Server is now listening\"}",
+    "logs": "{}",
+    "stop": "quit"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\n/opt/install-server.sh /mnt/server",
+      "container": "ghcr.io/ferecece/fightclub:latest",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Server Name",
+      "description": "Nombre visible en el server browser.",
+      "env_variable": "SERVER_NAME",
+      "default_value": "FIGHT CLUB",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:255",
+      "field_type": "text"
+    },
+    {
+      "name": "HTTP Port",
+      "description": "Puerto HTTP de GTA Connected. Debe estar asignado como allocation.",
+      "env_variable": "HTTP_PORT",
+      "default_value": "22000",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|integer|between:1,65535",
+      "field_type": "text"
+    },
+    {
+      "name": "HTTP Server",
+      "description": "Servir archivos de cliente desde el HTTP interno.",
+      "env_variable": "HTTP_SERVER",
+      "default_value": "true",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|in:true,false",
+      "field_type": "text"
+    },
+    {
+      "name": "HTTP URL",
+      "description": "CDN externo para los archivos de cliente. Vacío usa el HTTP interno.",
+      "env_variable": "HTTP_URL",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|url",
+      "field_type": "text"
+    },
+    {
+      "name": "Max Players",
+      "description": "Cantidad máxima de jugadores.",
+      "env_variable": "MAX_PLAYERS",
+      "default_value": "32",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|integer|between:1,127",
+      "field_type": "text"
+    },
+    {
+      "name": "Game",
+      "description": "Identificador de GTA Connected. Para TBoGT usar gta:iv.",
+      "env_variable": "GAME",
+      "default_value": "gta:iv",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|in:gta:iv",
+      "field_type": "text"
+    },
+    {
+      "name": "Game Mode",
+      "description": "Texto del modo de juego en el server browser.",
+      "env_variable": "GAMEMODE",
+      "default_value": "Fight Club",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:255",
+      "field_type": "text"
+    },
+    {
+      "name": "IV Episode",
+      "description": "2 = The Ballad of Gay Tony.",
+      "env_variable": "IV_EPISODE",
+      "default_value": "2",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|integer|between:0,2",
+      "field_type": "text"
+    },
+    {
+      "name": "IV Gamemode",
+      "description": "Gamemode nativo de GTA IV. Default 16.",
+      "env_variable": "IV_GAMEMODE",
+      "default_value": "16",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|integer|between:0,99",
+      "field_type": "text"
+    },
+    {
+      "name": "IV Native Multiplayer",
+      "description": "Usar sync de Rockstar. Para scripts custom dejar false.",
+      "env_variable": "IV_NATIVE_MULTIPLAYER",
+      "default_value": "false",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|in:true,false",
+      "field_type": "text"
+    },
+    {
+      "name": "Server Browser",
+      "description": "Publicar el server en el server browser.",
+      "env_variable": "SERVER_BROWSER",
+      "default_value": "true",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|in:true,false",
+      "field_type": "text"
+    },
+    {
+      "name": "Server Query",
+      "description": "Responder queries UDP del server browser.",
+      "env_variable": "SERVER_QUERY",
+      "default_value": "true",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|in:true,false",
+      "field_type": "text"
+    },
+    {
+      "name": "Server Password",
+      "description": "Password opcional para entrar. Vacío = público.",
+      "env_variable": "SERVER_PASSWORD",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255",
+      "field_type": "text"
+    },
+    {
+      "name": "Update GTAC on Start",
+      "description": "Bajar el binario GTAC latest al arrancar el server.",
+      "env_variable": "GTAC_UPDATE_ON_START",
+      "default_value": "false",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|in:true,false",
+      "field_type": "text"
+    }
+  ]
+}

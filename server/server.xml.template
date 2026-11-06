@@ -1,0 +1,54 @@
+<server>
+    <!-- General Information -->
+    <servername>{{SERVER_NAME}}</servername>
+    <game>{{GAME}}</game>
+    <gamemode>{{GAMEMODE}}</gamemode>
+    <serverbrowser>{{SERVER_BROWSER}}</serverbrowser>
+    <serverquery>{{SERVER_QUERY}}</serverquery>
+    <maxplayers>{{MAX_PLAYERS}}</maxplayers>
+    <password>{{SERVER_PASSWORD}}</password>
+    <minclientversion>1.7.0</minclientversion>
+    <duplicatenames>false</duplicatenames>
+
+    <!-- Networking -->
+    <port>{{SERVER_PORT}}</port>
+    <httpport>{{HTTP_PORT}}</httpport>
+    <httpserver>{{HTTP_SERVER}}</httpserver>
+    <httpurl>{{HTTP_URL}}</httpurl>
+    <streaminterval>1000</streaminterval>
+    <syncinterval>30</syncinterval>
+    <syncmethod>interval</syncmethod>
+    <synclocalentities>true</synclocalentities>
+
+    <!-- Element Streaming -->
+    <streamindistance>200</streamindistance>
+    <streamoutdistance>250</streamoutdistance>
+    <pickupstreamindistance>30</pickupstreamindistance>
+    <pickupstreamoutdistance>50</pickupstreamoutdistance>
+
+    <!-- Logging -->
+    <logpath>logs</logpath>
+    <logtimestamp>[%d/%m/%Y - %X]</logtimestamp>
+
+    <!-- GTA IV -->
+    <iv_gamemode>{{IV_GAMEMODE}}</iv_gamemode>
+    <iv_episode>{{IV_EPISODE}}</iv_episode>
+    <iv_nativemultiplayer>{{IV_NATIVE_MULTIPLAYER}}</iv_nativemultiplayer>
+
+    <!-- Modules -->
+    <modules>
+    </modules>
+
+    <!-- Global CVars -->
+    <cvar name="traffic" value="1" />
+    <cvar name="civilians" value="1" />
+
+    <!-- Rules -->
+    <rule name="Owner" value="Fight Club" />
+    <rule name="Website" value="https://github.com/ferecece/fightclub" />
+
+    <!-- Resources -->
+    <resources>
+        <resource src="freeroam" />
+    </resources>
+</server>
