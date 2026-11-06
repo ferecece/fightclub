@@ -120,9 +120,9 @@
     },
     {
       "name": "IV Native Multiplayer",
-      "description": "Usar sync de Rockstar. Para scripts custom dejar false.",
+      "description": "Usar sync nativo de Rockstar (IV multiplayer). Desactivar solo para scripts custom que lo requieran.",
       "env_variable": "IV_NATIVE_MULTIPLAYER",
-      "default_value": "false",
+      "default_value": "true",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|in:true,false",

@@ -70,7 +70,7 @@ HTTP_URL
 MAX_PLAYERS
 GAME=gta:iv
 IV_EPISODE=2
-IV_NATIVE_MULTIPLAYER=false
+IV_NATIVE_MULTIPLAYER=true
 ```
 
 ## Archivos generados
