@@ -1,20 +1,20 @@
 services:
   server:
-    image: ghcr.io/ferecece/fightclub:latest
+    image: ghcr.io/ferecece/the-last-ballad:latest
     build:
       context: ./docker
       dockerfile: Dockerfile
     tty: true
     stdin_open: true
     environment:
-      SERVER_NAME: ${SERVER_NAME:-FIGHT CLUB}
+      SERVER_NAME: ${SERVER_NAME:-THE LAST BALLAD}
       SERVER_PORT: ${SERVER_PORT:-22000}
       HTTP_PORT: ${HTTP_PORT:-22000}
       HTTP_SERVER: ${HTTP_SERVER:-true}
       HTTP_URL: ${HTTP_URL:-}
       MAX_PLAYERS: ${MAX_PLAYERS:-32}
       GAME: ${GAME:-gta:iv}
-      GAMEMODE: ${GAMEMODE:-Fight Club}
+      GAMEMODE: ${GAMEMODE:-Racing}
       IV_EPISODE: ${IV_EPISODE:-2}
       IV_GAMEMODE: ${IV_GAMEMODE:-16}
       IV_NATIVE_MULTIPLAYER: ${IV_NATIVE_MULTIPLAYER:-false}

@@ -1,11 +1,11 @@
-# FIGHT CLUB
+# THE LAST BALLAD
 
-Servidor de peleas para **GTA IV: The Ballad of Gay Tony** usando **GTA Connected**.
+Servidor de carreras para **GTA IV: The Ballad of Gay Tony** usando **GTA Connected**.
 
 La imagen de runtime se publica en:
 
 ```text
-ghcr.io/ferecece/fightclub:latest
+ghcr.io/ferecece/the-last-ballad:latest
 ```
 
 El servidor GTA Connected se descarga desde la fuente oficial en el momento de instalar o actualizar. El binario no se guarda en el repositorio.
@@ -15,7 +15,7 @@ El servidor GTA Connected se descarga desde la fuente oficial en el momento de i
 ```text
 docker/          Imagen runtime, entrypoint e instalador
 server/          Template del volumen del servidor
-pterodactyl/     Egg de FIGHT CLUB
+pterodactyl/     Egg de THE LAST BALLAD
 docs/            Desarrollo y despliegue
 compose.yaml     Entorno local
 ```
@@ -84,8 +84,8 @@ Solo se sirven archivos declarados como `type="client"`. Los scripts viajan por 
 
 ## Deploy en Pterodactyl
 
-1. Importar `pterodactyl/egg-fightclub.json`.
-2. Crear el servidor con la imagen `ghcr.io/ferecece/fightclub:latest`.
+1. Importar `pterodactyl/egg-the-last-ballad.json`.
+2. Crear el servidor con la imagen `ghcr.io/ferecece/the-last-ballad:latest`.
 3. Asignar allocation UDP para el juego.
 4. Asignar allocation TCP para el HTTP si se usa el HTTP interno.
 5. Configurar `SERVER_NAME`, `HTTP_PORT`, `HTTP_SERVER`, `HTTP_URL` y `MAX_PLAYERS`.

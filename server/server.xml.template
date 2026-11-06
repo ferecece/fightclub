@@ -44,8 +44,8 @@
     <cvar name="civilians" value="1" />
 
     <!-- Rules -->
-    <rule name="Owner" value="Fight Club" />
-    <rule name="Website" value="https://github.com/ferecece/fightclub" />
+    <rule name="Owner" value="The Last Ballad" />
+    <rule name="Website" value="https://github.com/ferecece/the-last-ballad" />
 
     <!-- Resources -->
     <resources>

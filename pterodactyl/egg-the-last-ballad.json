@@ -1,16 +1,16 @@
 {
-  "_comment": "FIGHT CLUB server egg",
+  "_comment": "THE LAST BALLAD server egg",
   "meta": {
     "version": "PTDL_v2",
     "update_url": null
   },
   "exported_at": "2026-11-06T00:00:00+00:00",
-  "name": "FIGHT CLUB",
+  "name": "THE LAST BALLAD",
   "author": "ferecece@users.noreply.github.com",
-  "description": "GTA Connected fight server for GTA IV: The Ballad of Gay Tony.",
+  "description": "GTA Connected racing server for GTA IV: The Ballad of Gay Tony.",
   "features": null,
   "docker_images": {
-    "ghcr.io/ferecece/fightclub:latest": "ghcr.io/ferecece/fightclub:latest"
+    "ghcr.io/ferecece/the-last-ballad:latest": "ghcr.io/ferecece/the-last-ballad:latest"
   },
   "file_denylist": [],
   "startup": "./Server",
@@ -23,7 +23,7 @@
   "scripts": {
     "installation": {
       "script": "#!/bin/bash\n/opt/install-server.sh /mnt/server",
-      "container": "ghcr.io/ferecece/fightclub:latest",
+      "container": "ghcr.io/ferecece/the-last-ballad:latest",
       "entrypoint": "bash"
     }
   },
@@ -32,7 +32,7 @@
       "name": "Server Name",
       "description": "Nombre visible en el server browser.",
       "env_variable": "SERVER_NAME",
-      "default_value": "FIGHT CLUB",
+      "default_value": "THE LAST BALLAD",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string|max:255",
@@ -92,7 +92,7 @@
       "name": "Game Mode",
       "description": "Texto del modo de juego en el server browser.",
       "env_variable": "GAMEMODE",
-      "default_value": "Fight Club",
+      "default_value": "Racing",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string|max:255",

@@ -8,7 +8,7 @@ GTAC_URL="${GTAC_SERVER_URL:-https://gtaconnected.com/downloads/server/latest/li
 
 update_gtac_binary() {
     local tmp
-    tmp="$(mktemp -d "${TMPDIR:-/var/tmp}/fightclub-update.XXXXXX")"
+    tmp="$(mktemp -d "${TMPDIR:-/var/tmp}/the-last-ballad-update.XXXXXX")"
     trap 'rm -rf "$tmp"' RETURN
     echo "[entrypoint] updating GTAC server from $GTAC_URL"
     curl -fL --retry 3 --retry-delay 2 "$GTAC_URL" -o "$tmp/server.tar.gz"
@@ -37,14 +37,14 @@ if [ ! -f ./server.xml.template ]; then
     exit 1
 fi
 
-SERVER_NAME="${SERVER_NAME:-FIGHT CLUB}"
+SERVER_NAME="${SERVER_NAME:-THE LAST BALLAD}"
 SERVER_PORT="${SERVER_PORT:-22000}"
 HTTP_PORT="${HTTP_PORT:-$SERVER_PORT}"
 HTTP_SERVER="${HTTP_SERVER:-true}"
 HTTP_URL="${HTTP_URL:-}"
 MAX_PLAYERS="${MAX_PLAYERS:-32}"
 GAME="${GAME:-gta:iv}"
-GAMEMODE="${GAMEMODE:-Fight Club}"
+GAMEMODE="${GAMEMODE:-Racing}"
 IV_EPISODE="${IV_EPISODE:-2}"
 IV_GAMEMODE="${IV_GAMEMODE:-16}"
 IV_NATIVE_MULTIPLAYER="${IV_NATIVE_MULTIPLAYER:-false}"

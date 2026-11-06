@@ -6,11 +6,11 @@ Panel de Pterodactyl:
 
 1. Nests.
 2. Import Egg.
-3. Seleccionar `pterodactyl/egg-fightclub.json`.
+3. Seleccionar `pterodactyl/egg-the-last-ballad.json`.
 
 ## Crear servidor
 
-- Imagen: `ghcr.io/ferecece/fightclub:latest`
+- Imagen: `ghcr.io/ferecece/the-last-ballad:latest`
 - Juego: `gta:iv`
 - Episodio: `2` (The Ballad of Gay Tony)
 - Puerto de juego: allocation UDP/TCP.

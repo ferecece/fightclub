@@ -1,17 +1,17 @@
-# FIGHT CLUB
+# THE LAST BALLAD
 
 Egg para importar en Pterodactyl.
 
 Archivo:
 
 ```text
-egg-fightclub.json
+egg-the-last-ballad.json
 ```
 
 Imagen pública:
 
 ```text
-ghcr.io/ferecece/fightclub:latest
+ghcr.io/ferecece/the-last-ballad:latest
 ```
 
 El servidor usa GTA Connected con GTA IV: The Ballad of Gay Tony.

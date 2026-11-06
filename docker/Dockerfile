@@ -1,7 +1,7 @@
 FROM debian:trixie-slim
 
-LABEL org.opencontainers.image.title="FIGHT CLUB" \
-      org.opencontainers.image.description="Runtime image for the GTA Connected fight server"
+LABEL org.opencontainers.image.title="THE LAST BALLAD" \
+      org.opencontainers.image.description="Runtime image for the GTA Connected racing server"
 
 ENV DEBIAN_FRONTEND=noninteractive
 

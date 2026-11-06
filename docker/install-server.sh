@@ -2,9 +2,9 @@
 set -euo pipefail
 
 TARGET="${1:-/mnt/server}"
-TEMPLATE_URL="${SERVER_TEMPLATE_URL:-https://github.com/ferecece/fightclub/releases/latest/download/server-template.tar.gz}"
+TEMPLATE_URL="${SERVER_TEMPLATE_URL:-https://github.com/ferecece/the-last-ballad/releases/latest/download/server-template.tar.gz}"
 GTAC_URL="${GTAC_SERVER_URL:-https://gtaconnected.com/downloads/server/latest/linux}"
-TMP="$(mktemp -d "${TMPDIR:-/var/tmp}/fightclub-install.XXXXXX")"
+TMP="$(mktemp -d "${TMPDIR:-/var/tmp}/the-last-ballad-install.XXXXXX")"
 trap 'rm -rf "$TMP"' EXIT
 
 mkdir -p "$TARGET" "$TARGET/resources" "$TARGET/htdocs" "$TARGET/logs"
