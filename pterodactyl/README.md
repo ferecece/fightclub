@@ -37,12 +37,14 @@ Variables principales:
 
 ```text
 SERVER_NAME
+SERVER_WEBSITE=https://github.com/ferecece/the-last-ballad
 HTTP_PORT
 HTTP_SERVER
 HTTP_URL
 MAX_PLAYERS
 GAME=gta:iv
 IV_EPISODE=2
+IV_GAMEMODE=6
 IV_NATIVE_MULTIPLAYER=true
 ```
 

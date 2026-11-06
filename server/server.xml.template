@@ -45,7 +45,7 @@
 
     <!-- Rules -->
     <rule name="Owner" value="The Last Ballad" />
-    <rule name="Website" value="https://github.com/ferecece/the-last-ballad" />
+    <rule name="Website" value="{{SERVER_WEBSITE}}" />
 
     <!-- Resources -->
     <resources>

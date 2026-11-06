@@ -8,6 +8,7 @@ services:
     stdin_open: true
     environment:
       SERVER_NAME: ${SERVER_NAME:-THE LAST BALLAD}
+      SERVER_WEBSITE: ${SERVER_WEBSITE:-https://github.com/ferecece/the-last-ballad}
       SERVER_PORT: ${SERVER_PORT:-22000}
       HTTP_PORT: ${HTTP_PORT:-22000}
       HTTP_SERVER: ${HTTP_SERVER:-true}
@@ -16,7 +17,7 @@ services:
       GAME: ${GAME:-gta:iv}
       GAMEMODE: ${GAMEMODE:-Racing}
       IV_EPISODE: ${IV_EPISODE:-2}
-      IV_GAMEMODE: ${IV_GAMEMODE:-16}
+      IV_GAMEMODE: ${IV_GAMEMODE:-6}
       IV_NATIVE_MULTIPLAYER: ${IV_NATIVE_MULTIPLAYER:-true}
       SERVER_BROWSER: ${SERVER_BROWSER:-true}
       SERVER_QUERY: ${SERVER_QUERY:-true}

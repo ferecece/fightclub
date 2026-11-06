@@ -88,7 +88,7 @@ Solo se sirven archivos declarados como `type="client"`. Los scripts viajan por 
 2. Crear el servidor con la imagen `ghcr.io/ferecece/the-last-ballad:latest`.
 3. Asignar allocation UDP para el juego.
 4. Asignar allocation TCP para el HTTP si se usa el HTTP interno.
-5. Configurar `SERVER_NAME`, `HTTP_PORT`, `HTTP_SERVER`, `HTTP_URL` y `MAX_PLAYERS`.
+5. Configurar `SERVER_NAME`, `SERVER_WEBSITE`, `HTTP_PORT`, `HTTP_SERVER`, `HTTP_URL` y `MAX_PLAYERS`.
 6. Instalar o reinstalar el servidor.
 
 El startup es:

@@ -12,20 +12,6 @@ mkdir -p "$TARGET" "$TARGET/resources" "$TARGET/htdocs" "$TARGET/logs"
 echo "[install] target: $TARGET"
 echo "[install] GTAC server: $GTAC_URL"
 
-if [ -f "$TARGET/server.xml.template" ]; then
-    echo "[install] template already present, keeping it"
-else
-    echo "[install] template: $TEMPLATE_URL"
-    CURL_ARGS=(-fL --retry 3 --retry-delay 2)
-    if [ -n "${GITHUB_TOKEN:-}" ]; then
-        CURL_ARGS+=(-H "Authorization: Bearer ${GITHUB_TOKEN}")
-    fi
-    curl "${CURL_ARGS[@]}" "$TEMPLATE_URL" -o "$TMP/server-template.tar.gz"
-    mkdir -p "$TMP/template"
-    tar -xzf "$TMP/server-template.tar.gz" -C "$TMP/template"
-    cp -a "$TMP/template/." "$TARGET/"
-fi
-
 if [ -f "$TARGET/Server" ]; then
     BACKUP="$TARGET/backups/pre-update-$(date +%Y%m%d-%H%M%S)"
     mkdir -p "$BACKUP"
@@ -36,6 +22,31 @@ if [ -f "$TARGET/Server" ]; then
         fi
     done
 fi
+
+# Managed file: always take the latest template from the release so a tag
+# actually updates existing servers. Custom resources and htdocs are untouched.
+echo "[install] template: $TEMPLATE_URL"
+CURL_ARGS=(-fL --retry 3 --retry-delay 2)
+if [ -n "${GITHUB_TOKEN:-}" ]; then
+    CURL_ARGS+=(-H "Authorization: Bearer ${GITHUB_TOKEN}")
+fi
+curl "${CURL_ARGS[@]}" "$TEMPLATE_URL" -o "$TMP/server-template.tar.gz"
+mkdir -p "$TMP/template"
+tar -xzf "$TMP/server-template.tar.gz" -C "$TMP/template"
+
+TEMPLATE_SRC=""
+if [ -f "$TMP/template/server.xml.template" ]; then
+    TEMPLATE_SRC="$TMP/template/server.xml.template"
+elif [ -f "$TMP/template/server/server.xml.template" ]; then
+    TEMPLATE_SRC="$TMP/template/server/server.xml.template"
+fi
+
+if [ -z "$TEMPLATE_SRC" ]; then
+    echo "[install] invalid template: server.xml.template not found" >&2
+    exit 1
+fi
+
+install -m 0644 "$TEMPLATE_SRC" "$TARGET/server.xml.template"
 
 echo "[install] downloading GTAC server"
 curl -fL --retry 3 --retry-delay 2 "$GTAC_URL" -o "$TMP/gtac-server.tar.gz"
@@ -52,13 +63,8 @@ if [ -f "$TMP/gtac/libmozjs-60.so" ]; then
     install -m 0644 "$TMP/gtac/libmozjs-60.so" "$TARGET/libmozjs-60.so"
 fi
 
-# Keep custom resources. Only refresh the official freeroam skeleton.
-mkdir -p "$TARGET/resources"
-if [ -d "$TMP/gtac/resources/freeroam" ]; then
-    rm -rf "$TARGET/resources/freeroam"
-    cp -a "$TMP/gtac/resources/freeroam" "$TARGET/resources/freeroam"
-fi
-
+# freeroam is not loaded with native IV sync, so its skeleton is not installed.
+# Custom resources are preserved.
 mkdir -p "$TARGET/htdocs" "$TARGET/logs"
 
 if [ "$(id -u)" = "0" ]; then

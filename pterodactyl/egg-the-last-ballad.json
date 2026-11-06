@@ -39,6 +39,16 @@
       "field_type": "text"
     },
     {
+      "name": "Website",
+      "description": "URL del sitio web que aparece en el server browser. Vacío para ocultarlo.",
+      "env_variable": "SERVER_WEBSITE",
+      "default_value": "https://github.com/ferecece/the-last-ballad",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|url",
+      "field_type": "text"
+    },
+    {
       "name": "HTTP Port",
       "description": "Puerto HTTP de GTA Connected. Debe estar asignado como allocation.",
       "env_variable": "HTTP_PORT",
@@ -110,9 +120,9 @@
     },
     {
       "name": "IV Gamemode",
-      "description": "Gamemode nativo de GTA IV. Default 16.",
+      "description": "Gamemode nativo de GTA IV. Default 6.",
       "env_variable": "IV_GAMEMODE",
-      "default_value": "16",
+      "default_value": "6",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer|between:0,99",
