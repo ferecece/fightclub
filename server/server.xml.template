@@ -49,6 +49,7 @@
 
     <!-- Resources -->
     <resources>
-        <resource src="freeroam" />
+        <!-- IV native multiplayer handles the session; freeroam is not loaded. -->
+        <!-- <resource src="freeroam" /> -->
     </resources>
 </server>
