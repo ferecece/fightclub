@@ -44,7 +44,7 @@
     <cvar name="civilians" value="1" />
 
     <!-- Rules -->
-    <rule name="Owner" value="The Last Ballad" />
+    <rule name="Owner" value="{{SERVER_OWNER}}" />
     <rule name="Website" value="{{SERVER_WEBSITE}}" />
 
     <!-- Resources -->

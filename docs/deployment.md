@@ -41,16 +41,27 @@ El install script:
 
 ## HTTP externo
 
-Para usar un CDN o playit:
+`HTTP_URL` es la URL pública de descargas. Debe incluir `http://` o `https://` y terminar en `/`.
+
+### Túnel playit hacia el HTTP interno
+
+El túnel apunta al puerto HTTP del server, así que `HTTP_SERVER` debe quedar en `true`:
+
+```text
+HTTP_SERVER=true
+HTTP_URL=http://198.22.204.17:44024/
+```
+
+### CDN con los archivos subidos
+
+Si el CDN ya hostea el contenido de `server/htdocs/`, se puede apagar el HTTP interno:
 
 ```text
 HTTP_SERVER=false
 HTTP_URL=https://tu-cdn/
 ```
 
-El CDN debe servir el contenido de `server/htdocs/`.
-
-Si se usa el HTTP interno:
+### HTTP interno (sin URL externa)
 
 ```text
 HTTP_SERVER=true

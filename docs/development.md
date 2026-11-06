@@ -63,6 +63,7 @@ docker compose restart
 
 ```text
 SERVER_NAME
+SERVER_OWNER=The Last Ballad
 SERVER_WEBSITE=https://github.com/ferecece/the-last-ballad
 SERVER_PORT
 HTTP_PORT

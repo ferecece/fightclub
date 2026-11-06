@@ -67,17 +67,28 @@ y se agregan en `server/server.xml.template`:
 
 ## HTTP externo
 
-GTA Connected puede servir los archivos de cliente desde un CDN externo:
+`httpurl` es la URL pública que usan los clientes para descargar archivos. Debe incluir el esquema (`http://` o `https://`) y terminar en `/`.
+
+### CDN con los archivos subidos
 
 ```xml
 <httpserver>false</httpserver>
 <httpurl>https://cdn.example.com/</httpurl>
 ```
 
-El CDN debe apuntar al contenido de:
+El CDN debe servir el contenido de:
 
 ```text
 server/htdocs/
+```
+
+### Túnel playit hacia el HTTP interno
+
+El túnel apunta al puerto HTTP del server, así que el HTTP interno debe quedar encendido:
+
+```xml
+<httpserver>true</httpserver>
+<httpurl>http://198.22.204.17:44024/</httpurl>
 ```
 
 Solo se sirven archivos declarados como `type="client"`. Los scripts viajan por la red del juego.
@@ -88,7 +99,7 @@ Solo se sirven archivos declarados como `type="client"`. Los scripts viajan por 
 2. Crear el servidor con la imagen `ghcr.io/ferecece/the-last-ballad:latest`.
 3. Asignar allocation UDP para el juego.
 4. Asignar allocation TCP para el HTTP si se usa el HTTP interno.
-5. Configurar `SERVER_NAME`, `SERVER_WEBSITE`, `HTTP_PORT`, `HTTP_SERVER`, `HTTP_URL` y `MAX_PLAYERS`.
+5. Configurar `SERVER_NAME`, `SERVER_OWNER`, `SERVER_WEBSITE`, `HTTP_PORT`, `HTTP_SERVER`, `HTTP_URL` y `MAX_PLAYERS`.
 6. Instalar o reinstalar el servidor.
 
 El startup es:

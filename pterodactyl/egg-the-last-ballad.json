@@ -39,6 +39,16 @@
       "field_type": "text"
     },
     {
+      "name": "Owner",
+      "description": "Owner que aparece en el server browser.",
+      "env_variable": "SERVER_OWNER",
+      "default_value": "The Last Ballad",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:255",
+      "field_type": "text"
+    },
+    {
       "name": "Website",
       "description": "URL del sitio web que aparece en el server browser. Vacío para ocultarlo.",
       "env_variable": "SERVER_WEBSITE",
@@ -60,7 +70,7 @@
     },
     {
       "name": "HTTP Server",
-      "description": "Servir archivos de cliente desde el HTTP interno.",
+      "description": "Mantener en true si un túnel (playit) o CDN apunta al HTTP interno. false solo si el CDN ya hostea htdocs.",
       "env_variable": "HTTP_SERVER",
       "default_value": "true",
       "user_viewable": true,
@@ -70,7 +80,7 @@
     },
     {
       "name": "HTTP URL",
-      "description": "CDN externo para los archivos de cliente. Vacío usa el HTTP interno.",
+      "description": "URL pública de descargas. Incluir http:// o https:// y barra final. Ej: http://198.22.204.17:44024/ . Vacío usa el HTTP interno.",
       "env_variable": "HTTP_URL",
       "default_value": "",
       "user_viewable": true,
